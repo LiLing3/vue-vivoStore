@@ -1,0 +1,30 @@
+li.list > a,
+button.list-style {
+  color: darkorange;
+}
+.c {
+  color: red;
+}
+.b {
+  color: aqua;
+}
+.some .selector div {
+  color-1: #008000;
+  color-2: #008000;
+  padding-2: 2;
+  color-3: #008000;
+  padding-3: 3px;
+  margin: 2 2 2 2;
+}
+.class {
+  color: aqua;
+  color: #000;
+}
+@media (orientation: portrait) and tv {
+  .my-selector {
+    background-color: black;
+  }
+}
+.caller {
+  color: blue;
+}

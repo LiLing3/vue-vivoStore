@@ -11,7 +11,7 @@
         <ul class="show">
           <li>
             <div id="detailPic">
-              <img src="static/images/detialshow1.png.webp" alt="" />
+              <img :src="details[i].url" alt="" />
               <!-- <span> {{details[i]}}</span> -->
             </div>
             <ul>
