@@ -1,73 +1,69 @@
-li.list > a {
-    color: darkorange;
-  }
-  button.list-style {
-    &:extend(li.list > a); // use the same list styles
-  }
-
-
-  #outer() {
-    .inner {
-      color: red;
-    }
-    .inner2{
-        color: aqua;
-    }
-  }
-  .c {
-    #outer > .inner();
-  }
-  .b{
-    #outer > .inner2();
-  }
-.mixin(@color) {
-    color-1: @color;
-  }
-  .mixin(@color; @padding: 2) {
-    color-2: @color;
-    padding-2: @padding;
-  }
-  .mixin(@color; @padding:3px; @margin: 2) {
-    color-3: @color;
-    padding-3: @padding;
-    margin: @margin @margin @margin @margin;
-  }
-  .some .selector div {
-    .mixin(#008000);
-  }
-  .truth(@a) when (@a) { 
-    color: aqua;
-  }
-.truth(@a) when (@a = true) { 
-  color: #000;
+/*公共样式封装*/
+//悬停阴影样式
+#box{
+  transition: all .2s linear;
+  &:hover{
+    box-shadow: 0 15px 30px rgb(0 0 0 / 10%);
+    transform: translate3d(0, -2px, 0);
+  }   
 }
-.class {
-  .truth(true); // Will not match any of the above definitions.
-}
-
-
-
-@my-ruleset: {
-  .my-selector {
-    @media tv {
-      background-color: black;
+//商品列表框样式
+.goodsstyle(@goodswidth:290px;@goodsheight:380px;@goodsimgwidth:172px;@goodsimgheight:172px;@margin-t:41px){
+  #goods{
+    width: @goodswidth;
+    height: @goodsheight;
+    text-align: center;
+    margin: 0 auto;
+    background-color: white;
+    a{
+      text-align: center;
+    }
+    .discountimg{
+      position: relative;
+      top: 16px;
+      left: 16px;
+      float: left;
+    }
+    .goodsimg{
+      width: @goodsimgwidth;
+      height: @goodsimgheight;
+      margin-top: @margin-t;
+    }
+    .msg p{
+        overflow: hidden;
+        text-align: center;
+        text-overflow: ellipsis;
+        white-space: nowrap;
+        &:nth-child(1){
+          padding-top: 20px;
+          font-size: 16px;
+        }
+        &:nth-child(2){
+          padding-top: 5px;
+          font-size: 12px;
+        }
+        &:nth-child(3){
+          padding-top: 5px;
+          color: red;
+          font-size: 22px;
+        }
+        .price{
+          font-size: 14px;
+          text-decoration: line-through;
+          color: #aaa;
+          margin-left: 6px;
+        }
     }
   }
-};
-@media (orientation:portrait) {
-  @my-ruleset();
 }
-
-
-
-// detached ruleset with a mixin
-@detached-ruleset: { 
-  .mixin() {
-      color: blue;
-  }
-};
-// call detached ruleset
-.caller {
-  @detached-ruleset(); 
-  .mixin();
+//尺寸样式
+.size(@w;@h){
+  width: @w;
+  height: @h;
+}
+//标题样式
+.title p{
+  text-align: center;
+  font-size: 24px;
+  padding: 30px 0 20px;
 }

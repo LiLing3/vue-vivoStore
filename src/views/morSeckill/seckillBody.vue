@@ -20,14 +20,14 @@
       </ul>
     </div>
     <ul class="tu">
-      <li v-for="item in items" :key="item.name">
-        <div class="thing">
-          <img :src="item.discountImgsrc" class="zhekou" alt />
+      <li v-for="item in items" :key="item.name" id="box">
+        <div id="goods">
+          <img :src="item.discountImgsrc" class="discountimg" alt />
           <router-link
             :to="{ name: 'detail', query: { id: item.id } }"
             target="_blank"
           >
-            <img :src="item.phoneaImgsrc" class="img" alt />
+            <img :src="item.phoneaImgsrc" class="goodsimg" alt />
           </router-link>
           <div class="msg">
             <p>{{ item.name }}</p>
@@ -86,11 +86,11 @@ export default {
   },
 };
 </script>
-<style lang=less>
-
-@width:1200px;
+<style scoped lang='less'>
+@import "./../style/publicStyle.less";
+.goodsstyle();
 .seckillBody {
-  width: @width;
+  width: 1200px;
   margin: 0 auto;
 }
 .vkill {
@@ -107,7 +107,7 @@ export default {
   font-size: 16px;
 }
 .title  {
-  width: @width;
+  width: 1200px;
   height: 57px;
   div > span,i{
     display: inline-block;
@@ -138,20 +138,7 @@ export default {
   margin: 0 5px;
   }
 }
-
-.thing {
-  width: 290px;
-  height: 380px;
-  background-color: white;
-  transition: all 0.2s linear;
-  .zhekou {
-    position: relative;
-    top: 16px;
-    left: 16px;
-    float: left;
-}
-}
-.thing,.phone,.pjimg {
+.phone,.pjimg {
   .img {
   width: 172px;
   height: 172px;
@@ -159,7 +146,7 @@ export default {
   }
 }
 
-.thing,.ms,.phmsg,.pjimg {
+.ms,.phmsg,.pjimg {
   p{
     overflow: hidden;
     text-align: center;
@@ -168,51 +155,5 @@ export default {
   }
   
 }
-.msg {
-  margin: auto;
-  width: 260px;
-}
-.msg p{
-  &:nth-child(1){
-    padding-top: 20px;
-    font-size: 16px;
-  }
-  &:nth-child(2){
-    padding-top: 5px;
-    font-size: 12px;
-  }
-  &:nth-child(3){
-    padding-top: 5px;
-    color: red;
-    font-size: 22px;
-  }
-  .price {
-  font-size: 14px;
-  text-decoration: line-through;
-  color: #aaa;
-  margin-left: 6px;
-}
-}
-/*
-.msg p:nth-child(1) {
-  padding-top: 20px;
-  font-size: 16px;
-}
-.msg p:nth-child(2) {
-  padding-top: 5px;
-  font-size: 12px;
-}
-.msg p:nth-child(3) {
-  padding-top: 5px;
-  color: red;
-  font-size: 22px;
-}
-.msg p .price {
-  font-size: 14px;
-  text-decoration: line-through;
-  color: #aaa;
-  margin-left: 6px;
-}
-*/
 
 </style>

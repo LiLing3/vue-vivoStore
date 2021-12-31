@@ -170,7 +170,6 @@ export default {
 };
 </script>
 <style scoped lang="less">
-@import './../style/detailPagestyle.less';
 #outtest {
   background-color: salmon;
   /deep/ #intest{

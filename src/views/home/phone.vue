@@ -1,84 +1,81 @@
 
 <template>
   <div class="bestPhone">
-    <div class="ti">
+    <div class="title">
       <p>精品手机</p>
-    </div>
+    </div >
     <ul class="phone">
-      <li>
+      <li id="box">
         <a href="#">
           <img src="static/images/S10系列.png.webp" class="s10" alt />
         </a>
       </li>
-      <li>
-        <a href="#">
-          <img src="static/images/vivoX70星云.png.webp" class="img" alt />
+      <li v-for="phoneinfo in phoneinfos" id="box" :key="phoneinfo.name" >
+        <div id="goods">
+          <a href="#">
+          <img :src="phoneinfo.url" class="goodsimg" alt />
         </a>
-        <div class="phmsg">
-          <p>vivo X70 12GB+256GB 星云</p>
-          <p>蔡司专业影像</p>
-          <p>￥4299.00</p>
+        <div class="msg">
+          <p>{{phoneinfo.name}}</p>
+          <p>{{phoneinfo.msg}}</p>
+          <p>{{phoneinfo.price}}</p>
         </div>
-      </li>
-      <li>
-        <a href="#">
-          <img src="static/images/vivoT1电光青.png.webp" class="img" alt />
-        </a>
-        <div class="phmsg">
-          <p>vivo T1 8GB+128GB 电光青</p>
-          <p>高通骁龙778G</p>
-          <p>￥4198.00</p>
         </div>
-      </li>
-      <li>
-        <a href="#">
-          <img src="static/images/iqooZ5蓝色起源.png.webp" class="img" alt />
-        </a>
-        <div class="phmsg">
-          <p>iQOO Z5 8GB+128GB 蓝色起源</p>
-          <p>高通骁龙778G</p>
-          <p>￥1899.00</p>
-        </div>
-      </li>
-      <li>
-        <a href="#">
-          <img src="static/images/iqoo8燃.png.webp" class="img" alt />
-        </a>
-        <div class="phmsg">
-          <p>iQOO 8 12GB+256GB 燃</p>
-          <p>光致变色</p>
-          <p>￥3899.00</p>
-        </div>
-      </li>
-      <li>
-        <a href="#">
-          <img src="static/images/iqooNeo5.png.webp" class="img" alt />
-        </a>
-        <div class="phmsg">
-          <p>iQOO Neo5</p>
-          <p>高通骁龙870</p>
-          <p>￥2699.00</p>
-        </div>
-      </li>
-      <li>
-        <a href="#">
-          <img src="static/images/iqoo7.png.webp" class="img" alt />
-        </a>
-        <div class="phmsg">
-          <p>iQOO 7</p>
-          <p>高通骁龙888</p>
-          <p>￥4198.00</p>
-        </div>
+        
       </li>
     </ul>
   </div>
 </template>
 <script>
 export default {
-    name: 'bestphone'
+    name: 'bestphone',
+    data(){
+      return{
+        phoneinfos:[
+          {
+            url:'static/images/vivoX70星云.png.webp',
+            name:"vivo X70 12GB+256GB 星云",
+            msg:"蔡司专业影像",
+            price:"￥4299.00"
+          },
+          {
+            url:'static/images/vivoT1电光青.png.webp',
+            name:"vivo T1 8GB+128GB 电光青",
+            msg:"高通骁龙778G",
+            price:"￥4198.00"
+          },
+          {
+            url:'static/images/iqooZ5蓝色起源.png.webp',
+            name:"iQOO Z5 8GB+128GB 蓝色起源",
+            msg:"高通骁龙778G",
+            price:"￥1899.00"
+          },
+          {
+            url:'static/images/iqoo8燃.png.webp',
+            name:"iQOO 8 12GB+256GB 燃",
+            msg:"光致变色",
+            price:"￥3899.00"
+          },
+          {
+            url:'static/images/iqooNeo5.png.webp',
+            name:"iQOO Neo5",
+            msg:"高通骁龙870",
+            price:"￥2699.00"
+          },
+          {
+            url:'static/images/iqoo7.png.webp',
+            name:"iQOO 7",
+            msg:"高通骁龙888",
+            price:"￥4198.00"
+          },
+        ]
+      }
+    }
+    
 }
 </script>
-<style>
+<style lang='less'>
+@import "./../style/publicStyle.less";
 .bestPhone{
     width: 1200px;
     height: 867px;
@@ -93,25 +90,10 @@ export default {
     width: 290px;
     height: 380px;
     background-color: white;
-    transition: all .2s linear;
     float: left;
     margin: 5px;
 }
 .phone li:first-child,.phone li:first-child img{
-    width: 590px;
-    height: 380px;
-}
-.phmsg p:nth-child(1),.pjmsg p:nth-child(1){
-    font-size: 16px;
-    padding-top: 16px;
-}
-.phmsg p:nth-child(2),.pjmsg p:nth-child(2){
-    font-size: 12px;
-    padding-top: 10px;
-}
-.phmsg p:nth-child(3),.pjmsg p:nth-child(3){
-    font-size: 16px;
-    padding-top: 20px;
-    color: red;
+  .size(590px;380px);
 }
 </style>

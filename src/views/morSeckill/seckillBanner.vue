@@ -4,7 +4,7 @@
       <img src="static/images/morSeckill.jpg" alt="V秒杀 精选好物低至9元" />
     </div>
     <div class="seckillTime">
-      <div v-for="section in sections" :key="section.time">
+      <div v-for="section in sections" :key="section.time" id="box">
         <span>{{ section.time }}</span>
         <span id="state">{{ section.state }}</span>
       </div>

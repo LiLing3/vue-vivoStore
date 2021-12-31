@@ -10,92 +10,81 @@
         </ul>
     </div>
     <ul class="pjimg">
-        <li>
-            <a href="#">
-                <img src="static/images/vivo TWS2.png.webp" class="img" alt>
+        <li v-for="caseinfo in caseinfos" id="box" :key="caseinfo.name">
+            <div id="goods">
+                <a href="#">
+                <img :src="caseinfo.url" class="goodsimg" alt>
             </a>
-            <div class="pjmsg">
-                <p>vivo TWS 2</p>
-                <p>真无线降噪耳机</p>
-                <p>￥499.00</p>
+            <div class="msg">
+                <p>{{caseinfo.name}}</p>
+                <p>{{caseinfo.msg}}</p>
+                <p>{{caseinfo.price}}</p>
             </div>
-        </li>
-        <li>
-            <a href="#">
-                <img src="static/images/vivo TWS Neo.png.webp" class="img" alt>
-            </a>
-            <div class="pjmsg">
-                <p>vivo TWS Neo</p>
-                <p>好音质，延迟低</p>
-                <p>￥499.00</p>
             </div>
-        </li>
-        <li>
-            <a href="#">
-                <img src="static/images/iqoo移动电源.png.webp" class="img" alt>
-            </a>
-            <div class="pjmsg">
-                <p>iQOO移动电源</p>
-                <p>20W PD 双向快充</p>
-                <p>￥129.00</p>
-            </div>
-        </li>
-        <li>
-            <a href="#">
-                <img src="static/images/vivo 44W闪充充电器.png.webp" class="img" alt>
-            </a>
-            <div class="pjmsg">
-                <p>vivo 44W闪充充电器套装</p>
-                <p>九重安全保护</p>
-                <p>￥149.00</p>
-            </div>
-        </li>
-        <li>
-            <a href="#">
-                <img src="static/images/iQOO闪电手柄.png.webp" class="img" alt>
-            </a>
-            <div class="pjmsg">
-                <p>iQOO 闪电手柄</p>
-                <p>电竞级手感</p>
-                <p>￥199.00</p>
-            </div>
-        </li>
-        <li>
-            <a href="#">
-                <img src="static/images/iqoo疾风散热背夹.png.webp" class="img" alt>
-            </a>
-            <div class="pjmsg">
-                <p>iQOO 极风散热背夹</p>
-                <p>秒速制冷降温</p>
-                <p>￥169.00</p>
-            </div>
-        </li>
-        <li>
-            <a href="#">
-                <img src="static/images/vivo 2A usb数据线.webp" class="img" alt>
-            </a>
-            <div class="pjmsg">
-                <p>vivo 2A USB数据线</p>
-                <p>支持双向引擎闪充</p>
-                <p>￥19.00</p>
-            </div>
-        </li>
-        <li>
-            <a href="#">
-                <img src="static/images/vivo XE 110有线耳机.png.webp" class="img" alt>
-            </a>
-            <div class="pjmsg">
-                <p>vivo XE110耳机</p>
-                <p>动听音质，高清通话</p>
-                <p>￥49.00</p>
-            </div>
-        </li>
+            
+        </li>      
     </ul>
 </div>
 </template>
 <script>
 export default {
-    name :'case'
+    name :'case',
+    data(){
+        return{
+            caseinfos:[
+                {
+                    url:'static/images/vivo TWS2.png.webp',
+                    name:"vivo TWS 2",
+                    msg:"真无线降噪耳机",
+                    price:"￥499.00"
+                },
+                {
+                    url:'static/images/vivo TWS Neo.png.webp',
+                    name:"vivo TWS Neo",
+                    msg:"好音质，延迟低",
+                    price:"￥499.00"
+                },
+                {
+                    url:'static/images/iqoo移动电源.png.webp',
+                    name:"iQOO移动电源",
+                    msg:"20W PD 双向快充",
+                    price:"￥129.00"
+                },
+                {
+                    url:'static/images/vivo 44W闪充充电器.png.webp',
+                    name:"vivo 44W闪充充电器套装",
+                    msg:"九重安全保护",
+                    price:"￥149.00"
+                },
+                {
+                    url:'static/images/iQOO闪电手柄.png.webp',
+                    name:"iQOO 闪电手柄",
+                    msg:"电竞级手感",
+                    price:"￥199.00"
+                },
+                {
+                    url:'static/images/iqoo疾风散热背夹.png.webp',
+                    name:"iQOO 极风散热背夹",
+                    msg:"秒速制冷降温",
+                    price:"￥169.00"
+                },
+                {
+                    url:'static/images/vivo 2A usb数据线.webp',
+                    name:"vivo 2A USB数据线",
+                    msg:"支持双向引擎闪充",
+                    price:"￥19.00"
+                },
+                {
+                    url:'static/images/vivo XE 110有线耳机.png.webp',
+                    name:"vivo XE110耳机",
+                    msg:"动听音质，高清通话",
+                    price:"￥49.00"
+                }
+
+            ]
+        }
+    }
+
 }
 </script>
 <style>

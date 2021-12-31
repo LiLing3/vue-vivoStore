@@ -1,6 +1,6 @@
 <template>
   <div class="seckill">
-    <div class="title">
+    <div class="vtitle">
       <ul>
         <li>
           <div class="vkill">
@@ -26,20 +26,23 @@
       </ul>
     </div>
     <ul class="tu">
-        <li v-for="item in items" :key="item.name">
-        <div class="thing">
-          <img :src="item.discountImgsrc" class="zhekou" alt />
+        <li v-for="item in items" :key="item.name" id="box">
+        <div  id="goods">
+          <img :src="item.discountImgsrc" class="discountimg" alt />
           <a href="#">
             <img
               :src="item.phoneaImgsrc"
-              class="img"
+              class="goodsimg"
               alt="vivo 65W多扣原装超快闪充充电器"
             />
           </a>
           <div class="msg">
             <p>{{item.name}}</p>
             <p>{{item.discount}}</p>
-            <p><span>{{item.price.originalPrice}}</span><span class="price">{{item.price.presentPrice}}</span></p>
+            <p>
+              <span>{{item.price.originalPrice}}</span>
+              <span class="price">{{item.price.presentPrice}}</span>
+            </p>
           </div>
         </div>
       </li>
@@ -91,23 +94,24 @@ export default {
   }
 };
 </script>
-<style>
+<style lang='less'>
+@import "./../style/publicStyle.less";
+.goodsstyle();
 .seckill {
-  width: 1200px;
-  height: 447px;
+  .size(1200px;447px);
   margin: 10px auto;
 }
-.title {
+.vtitle {
   width: 1200px;
   height: 57px;
 }
 .vkill {
   margin-top: 20px;
 }
-.title ul li {
+.vtitle ul li {
   float: left;
 }
-.title ul li:nth-child(3) {
+.vtitle ul li:nth-child(3) {
   float: right;
 }
 .time p {
@@ -135,34 +139,6 @@ export default {
   height: 380px;
   float: left;
   margin: 0 5px;
-}
-.thing {
-  width: 290px;
-  height: 380px;
-  background-color: white;
-  transition: all 0.2s linear;
-}
-.thing .img,
-.phone .img,
-.pjimg .img {
-  width: 172px;
-  height: 172px;
-  margin-top: 41px;
-}
-.thing .zhekou {
-  position: relative;
-  top: 16px;
-  left: 16px;
-  float: left;
-}
-.thing p,
-.ms p,
-.phmsg p,
-.pjimg p {
-  overflow: hidden;
-  text-align: center;
-  text-overflow: ellipsis;
-  white-space: nowrap;
 }
 .msg {
   margin: auto;
