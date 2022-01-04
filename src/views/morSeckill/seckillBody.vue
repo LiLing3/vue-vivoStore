@@ -99,61 +99,45 @@ export default {
 .title ul li {
   float: left;
   &:nth-child(3) {
-  float: right;
-}
+    float: right;
+  }
 }
 .time p {
   color: #999;
   font-size: 16px;
+  margin: 0;
+  padding: 15px 0;
+  span {
+    display: inline-block;
+    color: white;
+    width: 38px;
+    height: 32px;
+    line-height: 32px;
+    border-radius: 3px;
+    text-align: center;
+    font-size: 18px;
+    background-color: #ec0404;
+  }
 }
-.title  {
+.title {
   width: 1200px;
   height: 57px;
-  div > span,i{
+  div > span,
+  i {
     display: inline-block;
     position: relative;
     top: 20px;
   }
-  
-}
-.time p span {
-  display: inline-block;
-  color: white;
-  width: 38px;
-  height: 32px;
-  line-height: 32px;
-  border-radius: 3px;
-  text-align: center;
-  font-size: 18px;
-  background-color: #ec0404;
 }
 .seckillBody .tu {
   width: 1200px;
   height: 380px;
   padding: 0;
-  li{
+  li {
     width: 290px;
-  height: 380px;
-  float: left;
-  margin: 0 5px;
+    height: 380px;
+    float: left;
+    margin: 0 5px;
   }
 }
-.phone,.pjimg {
-  .img {
-  width: 172px;
-  height: 172px;
-  margin-top: 41px;
-  }
-}
-
-.ms,.phmsg,.pjimg {
-  p{
-    overflow: hidden;
-    text-align: center;
-    text-overflow: ellipsis;
-    white-space: nowrap;
-  }
-  
-}
-
 </style>

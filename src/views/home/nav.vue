@@ -33,7 +33,8 @@ export default {
   },
 };
 </script>
-<style>
+<style lang='less'>
+@import "./../style/publicStyle.less";
 .logoNav {
   width: 1200px;
   height: 86px;
@@ -72,10 +73,7 @@ export default {
   padding: 0 21px;
   margin: 0;
   cursor: pointer;
+  .linkcolor();
 }
-.logoNav ul li:hover,
-.foot-body-right ul li:first-child p:hover,
-.foot-body-left li dl dd:hover {
-  color: blue;
-}
+
 </style>

@@ -56,40 +56,33 @@ export default {
   line-height: 40px;
   margin: 0 auto;
   padding: 0;
-}
-.navCenter ul {
-  float: left;
-  margin: 0;
-  list-style: none;
-}
-.navCenter ul li {
-  display: inline-block;
-  cursor: pointer;
-  padding: 0 21px;
-  a {
-    color: #4a5261;
-    font-size: 12px;
-    &:hover {
-      color: white;
+  ul {
+    float: left;
+    margin: 0;
+    list-style: none;
+    li {
+      display: inline-block;
+      cursor: pointer;
+      padding: 0 21px;
+      a {
+        .linkcolor(@origin-color:#4a5261;@hover-color:white);
+      }
     }
   }
 }
-
 .navCenter .navright {
   float: right;
   right: 3%;
-}
-
-.navright ul {
-  float: left;
-  li {
-    padding-left: 21px;
+  ul {
+    float: left;
+    li {
+      padding-left: 21px;
+    }
   }
-}
-
-.navright i {
-  right: 35px;
-  top: 35px;
+  i {
+    right: 35px;
+    top: 35px;
+  }
 }
 i {
   font-family: "iconfont" !important;

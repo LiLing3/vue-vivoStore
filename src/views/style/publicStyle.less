@@ -67,3 +67,11 @@
   font-size: 24px;
   padding: 30px 0 20px;
 }
+//链接悬浮颜色样式
+.linkcolor(@origin-color:#333;@hover-color:blue){
+  color:@origin-color;
+  transition: all .2s linear;
+  &:hover{
+    color: @hover-color;
+  }
+}

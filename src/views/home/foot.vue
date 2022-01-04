@@ -76,58 +76,56 @@ export default {
         { name: "免费定制", iconClass: "iconfont icon-shandian" },
       ],
       footBoays: [
-        
-           {
-            list1: "热门链接",
-            list2: "X70 Pro+",
-            list3: "S10系列v",
-            list4: "NEX 3S",
-            list5: "vivo摄影",
-            list6: "查找手机",
-            list7: "常见问题",
-          },
-        
-         {
-            list1: "在线购买",
-            list2: "官方商城",
-            list3: "选购手机",
-            list4: "企业服务",
-            list5: "以旧换新",
-            list6: "保障服务",
-          },
-        
-         {
-            list1: "服务支持",
-            list2: "体验店",
-            list3: "服务首页",
-            list4: "服务网点查询",
-            list5: "真伪查询",
-            list6: "预约维修",
-            list7: "维修配件价格",
-            list8: "服务政策",
-            list9: "安全公告",
-            list10: "环保回收",
-          },
-        
-         {
-            list1: "vivo社区",
-            list2: "社区首页",
-            list3: "摄影专区",
-            list4: "新浪微博",
-            list5: "百度贴吧",
-          },
-        
-         {
-            list1: "关于vivo",
-            list2: "vivo简介",
-            list3: "工作机会",
-            list4: "新闻资讯",
-            list5: "采购平台",
-            list6: "供应商协同平台",
-            list7: "开放平台",
-            list8: "廉正合规",
-          },
-        
+        {
+          list1: "热门链接",
+          list2: "X70 Pro+",
+          list3: "S10系列v",
+          list4: "NEX 3S",
+          list5: "vivo摄影",
+          list6: "查找手机",
+          list7: "常见问题",
+        },
+
+        {
+          list1: "在线购买",
+          list2: "官方商城",
+          list3: "选购手机",
+          list4: "企业服务",
+          list5: "以旧换新",
+          list6: "保障服务",
+        },
+
+        {
+          list1: "服务支持",
+          list2: "体验店",
+          list3: "服务首页",
+          list4: "服务网点查询",
+          list5: "真伪查询",
+          list6: "预约维修",
+          list7: "维修配件价格",
+          list8: "服务政策",
+          list9: "安全公告",
+          list10: "环保回收",
+        },
+
+        {
+          list1: "vivo社区",
+          list2: "社区首页",
+          list3: "摄影专区",
+          list4: "新浪微博",
+          list5: "百度贴吧",
+        },
+
+        {
+          list1: "关于vivo",
+          list2: "vivo简介",
+          list3: "工作机会",
+          list4: "新闻资讯",
+          list5: "采购平台",
+          list6: "供应商协同平台",
+          list7: "开放平台",
+          list8: "廉正合规",
+        },
       ],
       vivoMessages: {
         name: "©2011-2021 广东天宸网络科技有限公司 版权所有 | 隐私政策 | 法律声明 |营业执照 | 粤B2-20150324 | 粤ICP备14052990号 | 粤公网安备44190002004246号",
@@ -137,64 +135,72 @@ export default {
   },
 };
 </script>
-<style>
+<style lang='less'>
+@import "./../style/publicStyle.less";
 .foot {
   width: 1200px;
   height: 800px;
   margin: 40px auto 0;
   background-color: white;
-}
-.foot .foot-top ul {
-  width: 1200px;
-  display: flex;
-  margin: 0 auto;
-  padding: 40px 0;
-}
-.foot .foot-top ul li {
-  height: 90px;
-  line-height: 90px;
-  font-size: 18px;
-  text-align: center;
-  flex: 1;
+  .foot-top ul {
+    width: 1200px;
+    display: flex;
+    margin: 0 auto;
+    padding: 40px 0;
+    li {
+      height: 90px;
+      line-height: 90px;
+      font-size: 18px;
+      text-align: center;
+      flex: 1;
+    }
+  }
 }
 .foot-body {
   max-width: 1400px;
   padding-top: 60px;
   margin: 0 auto;
+  .foot-body-right {
+    float: right;
+    ul li {
+      position: relative;
+      font-size: 16px;
+      margin-bottom: 30px;
+      cursor: pointer;
+      &:first-child p:hover {
+        color: blue;
+      }
+      span {
+        position: absolute;
+        display: inline-block;
+        left: 20px;
+        margin-top: -20px;
+      }
+    }
+  }
+  .foot-body-left {
+    display: inline-table;
+    float: left;
+    li {
+      display: table-cell;
+      width: 150px;
+      dl {
+        dt {
+          font-size: 16px;
+          line-height: 17px;
+          padding-bottom: 40px;
+        }
+        dd {
+          font-size: 14px;
+          line-height: 17px;
+          margin: 10px auto;
+          .linkcolor(@origin-color:#8a8f99);
+        }
+      }
+    }
+  }
 }
-.foot-body .foot-body-left {
-  display: inline-table;
-}
-.foot-body .foot-body-left li {
-  display: table-cell;
-  width: 150px;
-}
-.foot-body .foot-body-right {
-  float: right;
-}
-.foot-body-right ul li {
-  position: relative;
-  font-size: 16px;
-  margin-bottom: 30px;
-  cursor: pointer;
-}
-.foot-body-right ul li span {
-  position: absolute;
-  display: inline-block;
-  left: 20px;
-  margin-top: -20px;
-}
-.foot-body-left li dl dt {
-  font-size: 16px;
-  line-height: 17px;
-  padding-bottom: 40px;
-}
-.foot-body-left li dl dd {
-  color: #8a8f99;
-  font-size: 14px;
-  line-height: 17px;
-  margin: 10px auto;
-}
+
 .telnum {
   color: #415fff;
   font-size: 24px;
@@ -216,16 +222,20 @@ export default {
 }
 .foot-buttom {
   max-width: 1400px;
-  padding: 30px 0;
-  margin: 100px auto 0;
   font-size: 12px;
   color: #8a8f99;
+  span {
+    padding-top: 100px;
+    &:nth-child(1) {
+      float: left;
+    }
+    &:nth-child(2) {
+      cursor: pointer;
+      float: right;
+    }
+  }
 }
-.foot-buttom span:nth-child(1) {
-  float: left;
-}
-.foot-buttom span:nth-child(2) {
-  cursor: pointer;
-  float: right;
+.foot-body-right ul li:first-child p:hover {
+  color: blue;
 }
 </style>
